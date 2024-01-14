@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+     <title>My WiKi</title>
+
+     <link rel="icon" type="image/x-icon" href="D:/New project/wikipedia.ico">
+
+     <style>
+        .font{
+          background: url("https://mir-oboev.ua/image/cache/catalog/oboi/SNG68529120-1000x1000.jpg");
+          border: none;
+          font-family: 'Times New Roman';
+          font-size: 25px;
+          margin-left: 220px;
+        }
+        
+        body{
+            background-image: url("https://mir-oboev.ua/image/cache/catalog/oboi/SNG68529120-1000x1000.jpg");
+            color: black;
+            font: arial;
+            font-size: 25px;
+        }
+        .theme-color{
+            height: 66px;
+            width: 66px;
+            border-radius: 50%;
+            position: absolute;
+            top: 5px;
+            right: 0px;
+            bottom: 0;
+            left: 1000px;
+            background:url("D:/New project/sun.png") no-repeat;
+        }
+        .pp{
+          font-size: large;
+        }
+        .user-input{
+          width: 1000px;
+          height: 300px;
+          border: 2px solid black;
+          font-size: 25px;
+          font-family: 'Open Sans';
+          resize: none;
+        }
+        .user-button{
+          width: 130px;
+          height: 50px;
+          border: 4px double black;
+          position: absolute;
+          top: 110px;
+          left: 850px;
+          bottom: 0;
+          right: 0;
+        }
+        .image_place{
+            width: 210px;
+            height: 240px;
+            position: absolute;
+            top: 490px;
+            left: 10px;
+            bottom: 0;
+            right: 0;
+        }
+        .r_img{
+          width: 130px;
+          height: 50px;
+          border: 4px double black;
+          position: absolute;
+          top: 110px;
+          left: 700px;
+          bottom: 0;
+          right: 0;          
+        }
+        .i_place{
+          position: absolute;
+            top: 710px;
+            left: 10px;
+            bottom: 0;
+            right: 0;
+        }
+     </style>
+
+  </head>
+
+  <body>
+
+    <h1><strong>Josh Burder</strong></h1>
+
+    <p><i>Discribe the man on a picture here ↓</i></p>
+
+    <div class="pp">
+         <textarea name="user-input" id="user" class="user-input"></textarea>
+    </div>
+    
+    <img src="" id="10" class="image_place">
+
+    <input type="submit" id="discribe" class="font" value="">
+    
+    <p class="i_place"><i>The picture of Josh</i></p>
+
+    <div class="Buttons">
+         <button type="button" class="theme-color" id="1" data-theme-toogle></button>
+         <button type="button" class="user-button" id="2">Enter</button>
+         <button type="button" class="r_img" id="3">Random image</button>
+    </div>
+
+    <script>
+      function themeChange(){
+      alert("Clicked!");
+}
+
+function textFill(){
+     let user_input = document.getElementById("user");
+     let discribe = document.getElementById("discribe");
+     discribe.value = user_input.value;
+     user_input.value = "";
+}
+
+let imgArray = ["i.kym-cdn.com/photos/images/newsfeed/001/510/655/65d.png", "i.imgflip.com/5z1blg.jpg", "i1.sndcdn.com/artworks-000578157578-uf9iel-t500x500.jpg"];
+let basePath = "https://";
+
+function randomImage(){
+   for(let i = 0; i < 18; i++){
+      let rand = imgArray[Math.floor(Math.random() * imgArray.length)];
+      let image = document.getElementById("10");
+      image.src = basePath+rand;
+      document.body.appendChild(image)
+     
+   }
+}
+
+let click = document.getElementById("1");
+click.addEventListener("click", themeChange);
+
+let click2 = document.getElementById("2");
+click2.addEventListener("click", textFill);
+
+let r_img_btn = document.getElementById("3");
+r_img_btn.addEventListener("click", randomImage);
+
+    </script>
+
+
+  </body>
+</html>
