@@ -106,7 +106,8 @@
 
     <script>
       function themeChange(){
-      alert(feedback);
+      let awa = feedback.value; 
+      alert(awa);
 }
 
 function textFill(){
@@ -118,7 +119,7 @@ function textFill(){
 
 let imgArray = ["i.kym-cdn.com/photos/images/newsfeed/001/510/655/65d.png", "i.imgflip.com/5z1blg.jpg", "i1.sndcdn.com/artworks-000578157578-uf9iel-t500x500.jpg"];
 let basePath = "https://";
-let feedback = document.getElementById("user").value
+let feedback = document.getElementById("user")
 
 function randomImage(){
    for(let i = 0; i < 18; i++){
